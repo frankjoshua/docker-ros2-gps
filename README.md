@@ -11,8 +11,10 @@ This repo is mostly an example of how to build a multi architecture docker conta
 ```
 docker run -it \
     --network="host" \
-    frankjoshua/ros2-master
+    --privileged \
+    frankjoshua/ros2-gps
 ```
+ros2 topic pub /my_topic std_msgs/String "data: Hello, ROS 2!"
 
 ## Building
 
@@ -21,7 +23,7 @@ Use [build.sh](build.sh) to build the docker containers.
 <br>Local builds are as follows:
 
 ```
-./build.sh -t frankjoshua/ros2-master -l
+./build.sh -t frankjoshua/ros2-gps -l
 ```
 
 ## Template
