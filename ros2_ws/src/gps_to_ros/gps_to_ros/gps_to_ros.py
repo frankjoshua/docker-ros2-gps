@@ -29,7 +29,9 @@ class NemaSerialReader(Node):
                 parts = line.split(',')
 
                 if parts[2] == '':
-                    self.get_logger().warn("No GPS fix detected.")
+                    # Log the number of satellites in view
+                    num_satellites = int(parts[7]) if parts[7] else 0
+                    self.get_logger().warn(f"No GPS fix, satellites: {num_satellites}")
                     return
                 
                 navsatfix_msg = self.convert_nema_to_navsatfix(line)

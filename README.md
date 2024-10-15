@@ -11,6 +11,7 @@ This repo is mostly an example of how to build a multi architecture docker conta
 ```
 docker run -it \
     --network="host" \
+    --ipc=host \
     --privileged \
     frankjoshua/ros2-gps
 ```
