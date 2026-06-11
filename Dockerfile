@@ -1,16 +1,16 @@
-FROM frankjoshua/ros2
+FROM frankjoshua/ros2:humble
 
 # ** [Optional] Uncomment this section to install additional packages. **
 #
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
-   && apt-get -y install --no-install-recommends python3 pip \
+   && apt-get -y install --no-install-recommends python3 python3-pip \
    #
    # Clean up
    && apt-get autoremove -y \
    && apt-get clean -y \
    && rm -rf /var/lib/apt/lists/*
-RUN pip3 install --break-system-packages pyserial
+RUN pip3 install pyserial
 ENV DEBIAN_FRONTEND=dialog
 
 # Set the working directory to /root
