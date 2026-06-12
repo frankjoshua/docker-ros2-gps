@@ -1,10 +1,10 @@
-# ROS master in Docker [![](https://img.shields.io/docker/pulls/frankjoshua/ros2-master)](https://hub.docker.com/r/frankjoshua/ros2-master) [![CI](https://github.com/frankjoshua/docker-ros2-master/workflows/CI/badge.svg)](https://github.com/frankjoshua/docker-ros2-master/actions)
+# ROS2 GPS driver in Docker [![](https://img.shields.io/docker/pulls/frankjoshua/ros2-gps)](https://hub.docker.com/r/frankjoshua/ros2-gps) [![CI](https://github.com/frankjoshua/docker-ros2-gps/workflows/CI/badge.svg)](https://github.com/frankjoshua/docker-ros2-gps/actions)
 
 ## Description
 
-Runs a ros master in a Docker container. Probably need --network="host" because ROS uses ephemeral ports.
+Runs the GPS receiver driver in a Docker container — reads the serial GPS (`/dev/gps`) and publishes it into the ROS 2 graph. Needs `--network=host` for ROS 2 DDS discovery.
 
-This repo is mostly an example of how to build a multi architecture docker container with ROS (Robotic Operating System). Github Actions is used to build 3 docker containers using `docker buildx` amd64 (x86 Desktop PC), arm64 (Jetson Nano) and arm32 (Raspberry Pi). This is for the purpose of developing locally on a work pc or laptop. Then being able to transfer your work to an embedded device with a high level of confidence of success.
+This repo is mostly an example of how to build a multi architecture docker container with ROS (Robotic Operating System). Github Actions is used to build multi-architecture images using `docker buildx` for amd64 (x86 Desktop PC) and arm64 (Jetson). This is for the purpose of developing locally on a work pc or laptop. Then being able to transfer your work to an embedded device with a high level of confidence of success.
 
 ## Example
 
